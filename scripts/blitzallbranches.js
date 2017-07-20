@@ -31,6 +31,8 @@ VSS.require(["VSS/Controls", "VSS/Controls/Grids", "VSS/Controls/Dialogs",
 					$("#BranchCountSpan").html(count);
 					jQuery.each(branches, function (index, branch) {
 						if (branch.name.indexOf("master") > -1) return;
+						if (branch.name.indexOf("Tested") > -1) return;
+						if (branch.name.indexOf("Released") > -1) return;
 						var branchId = id+branch.name.replace(/[\.\/]/g, "_");
 						$("#branchTableBody").append("<tr id=\"" + branchId + "\"></tr>");
 						var repoName;
